@@ -237,17 +237,17 @@ form.addEventListener('submit', (e) => {
 
 function createObj(event) {
   event.preventDefault();
-  let formData = {
+  const formData = {
     fullName: document.querySelector('.fullname').value,
     email: document.querySelector('.email').value,
     message: document.querySelector('.form-message').value,
-  }
+  };
   localStorage.setItem('isFullName', formData.fullName);
   localStorage.setItem('isEmail', formData.email);
   localStorage.setItem('isMessage', formData.message);
 }
-  document.querySelector('.fullname').value =  localStorage.getItem('isFullName');
-  document.querySelector('.email').value = localStorage.getItem('isEmail');
-  document.querySelector('.form-message').value = localStorage.getItem('isMessage');
+document.querySelector('.fullname').value = localStorage.getItem('isFullName');
+document.querySelector('.email').value = localStorage.getItem('isEmail');
+document.querySelector('.form-message').value = localStorage.getItem('isMessage');
 
 form.addEventListener('submit', createObj);
