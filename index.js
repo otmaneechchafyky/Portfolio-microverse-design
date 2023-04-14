@@ -209,7 +209,7 @@ for (let j = 0; j < projects.length; j += 1) {
 // form validation
 
 const form = document.getElementById('contact_me');
-const REQUIRED_MESSAGE = 'Inavlid email';
+const REQUIRED_MESSAGE = 'Email needs to be in lowercase';
 
 function validation(input, showMessage) {
   const Regex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
