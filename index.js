@@ -208,11 +208,10 @@ for (let j = 0; j < projects.length; j += 1) {
 
 // form validation
 
-let form = document.getElementById('contact_me')
+const form = document.getElementById('contact_me');
 const REQUIRED_MESSAGE = 'Inavlid email';
 
 function validation(input, showMessage) {
-
   const Regex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
   const email = input.value.trim();
 
@@ -222,14 +221,13 @@ function validation(input, showMessage) {
     errorMsg.innerText = showMessage;
     input.style.borderColor = 'red';
     return false;
-  } else {
-    return true;
   }
+  return true;
 }
 
-form.addEventListener("submit", function (e) {
+form.addEventListener('submit', e => {
   e.preventDefault();
-  let emailValid = validation(form.elements['email'], REQUIRED_MESSAGE);
+  const emailValid = validation(form.elements.email, REQUIRED_MESSAGE);
   if (emailValid) {
     form.submit();
   }
