@@ -205,3 +205,30 @@ for (let j = 0; j < projects.length; j += 1) {
     });
   });
 }
+
+// form validation
+
+const form = document.getElementById('contact_me');
+const REQUIRED_MESSAGE = 'Email needs to be in lowercase';
+
+function validation(input, showMessage) {
+  const Regex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+  const email = input.value.trim();
+
+  if (!Regex.test(email)) {
+    input.value = '';
+    const errorMsg = input.parentNode.querySelector('small');
+    errorMsg.innerText = showMessage;
+    input.style.borderColor = 'red';
+    return false;
+  }
+  return true;
+}
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const emailValid = validation(form.elements.email, REQUIRED_MESSAGE);
+  if (emailValid) {
+    form.submit();
+  }
+});
