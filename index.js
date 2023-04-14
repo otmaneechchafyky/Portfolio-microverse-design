@@ -225,7 +225,7 @@ function validation(input, showMessage) {
   return true;
 }
 
-form.addEventListener('submit', e => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
   const emailValid = validation(form.elements.email, REQUIRED_MESSAGE);
   if (emailValid) {
